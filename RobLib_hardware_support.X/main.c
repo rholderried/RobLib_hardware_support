@@ -59,8 +59,7 @@ int main(void)
     SYSTEM_Initialize();
     
     // Map the UART Write CB of the RobCom module
-    sRobLib.sRobCom.sSerial.uartWrite_cb = UART1_Write;
-    sRobLib.sRobCom.sSerial.bRobComInitialized = true;
+    initializeRobComSerialCommunication(UART1_Write);
     
     debugOutput(DEBUG_ALWAYS, "Hallo from RobCom %d", 0);
     while (1)
